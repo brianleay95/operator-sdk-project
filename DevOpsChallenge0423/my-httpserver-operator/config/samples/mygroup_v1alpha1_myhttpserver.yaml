@@ -1,0 +1,12 @@
+apiVersion: mygroup.example.com/v1alpha1
+kind: MyHttpServer
+metadata:
+  labels:
+    app.kubernetes.io/name: myhttpserver
+    app.kubernetes.io/instance: myhttpserver-sample
+    app.kubernetes.io/part-of: my-httpserver-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: my-httpserver-operator
+  name: myhttpserver-sample
+spec:
+  # TODO(user): Add fields here
