@@ -1,0 +1,27 @@
+# permissions for end users to view pingpongservers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: pingpongserver-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator-sdk-project
+    app.kubernetes.io/part-of: operator-sdk-project
+    app.kubernetes.io/managed-by: kustomize
+  name: pingpongserver-viewer-role
+rules:
+- apiGroups:
+  - devops.mysdktest.io
+  resources:
+  - pingpongservers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - devops.mysdktest.io
+  resources:
+  - pingpongservers/status
+  verbs:
+  - get
