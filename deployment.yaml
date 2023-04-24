@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-test-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-test-server
+  template:
+    metadata:
+      labels:
+        app: go-test-server
+    spec:
+      containers:
+      - name: go-test-server
+        image: brianleay/test-ping-pong:test-tag
+        ports:
+        - containerPort: 8083
