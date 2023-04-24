@@ -52,6 +52,5 @@ func main() {
 	go pingHosts(config.Hosts, time.Duration(config.Interval)*time.Second)
 
 	http.HandleFunc("/ping", ping)
-	log.Fatal(http.ListenAndServe(":8084", nil))
-
+	log.Fatal(http.ListenAndServe(":8083", nil))
 }
